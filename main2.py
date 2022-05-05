@@ -22,7 +22,7 @@ class MyParser:
         self.parsed_obj = self.get_obj()
 
     def get_obj(self, html=None):
-        html = html if html else BeautifulSoup(self.html, 'html.parser')
+        html = html if html else BeautifulSoup(self.html, 'html.parser').body
         return {
             "tag": html.name,
             "attr": html.attrs,
@@ -39,12 +39,12 @@ class MyParser:
         return content_list
 
     def save_json(self, file_name):
-        with open(f'{file_name}.json', 'w') as out_file:
+        with open(f'output_files/{file_name}.json', 'w') as out_file:
             json.dump(self.parsed_obj, out_file)
 
     def save_html(self, file_name):
-        with open(f'{file_name}.html', 'w') as out_file:
-            out_file.write(str(self.html))
+        with open(f'output_files/{file_name}.html', 'w') as out_file:
+            out_file.write(self.html)
 
     def get_plain_text(self, parsed_obj=None):
         plane_text = ""
@@ -60,6 +60,7 @@ class MyParser:
         soup = BeautifulSoup("", 'html.parser')
         soup.append(self.create_tag(parsed_obj, soup))
         self.reborn_html = soup
+        return soup
 
     def create_tag(self, parsed_obj, soup):
         new_tag = soup.new_tag(parsed_obj["tag"])
@@ -95,7 +96,7 @@ class MyParser:
 # TestStringMethods().test_negative()
 
 
-with open("index1.html", "r", encoding="utf-8") as html_to_parse:
+with open("input_files/index.html", "r", encoding="utf-8") as html_to_parse:
     # soup_html = BeautifulSoup(html_to_parse, 'html.parser')
     parser = MyParser()
     parser.parse(html_to_parse)
@@ -105,8 +106,11 @@ with open("index1.html", "r", encoding="utf-8") as html_to_parse:
     # text = parser.get_plain_text()
     # print(text)
 
-    parser.parse_obj_to_html()
-    parser.save_html("reborn_html")
+    with open(f'output_files/asd.html', 'w') as out_file:
+        out_file.write(str(parser.parse_obj_to_html()))
+
+    # print(parser.parse_obj_to_html())
+    # parser.save_html("reborn_html")
 
 # Przydatne info
 # parsed_html.div.contents

@@ -78,7 +78,6 @@ def ShouldParseEndTag(tag):
 
 
 class MyHTMLParser(HTMLParser):
-    @override
     def handle_starttag(self, tag, attrs):
         ShouldParseStartTag(tag, attrs)
         if ShouldParse():
@@ -117,7 +116,7 @@ class MyHTMLParser(HTMLParser):
         print("Decl     :", data)
 
 parser = MyHTMLParser()
-file = codecs.open("index1.html", "r", encoding="utf-8")
+file = codecs.open("input_files/index1.html", "r", encoding="utf-8")
 merytoryka = open("text.txt","w", encoding="utf-8") #plik do zapisywania czystego textu
 save = open("test.txt","w", encoding="utf-8") #plik do zapisywania htmla
 
