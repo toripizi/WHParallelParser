@@ -1,4 +1,4 @@
-forbidden_tags =[
+forbidden_tags = [
     {
         "name": "style",
         "attrs": {}
@@ -23,11 +23,10 @@ forbidden_tags =[
     }, {
         "name": "div",
         "attrs": {'role': 'navigation'}
-    },{
+    }, {
         "name": "table",
         "attrs": {}
     }
 ]
-
 
 new_line_tags = ["p", "br", "hr"]
