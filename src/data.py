@@ -29,4 +29,4 @@ forbidden_tags = [
     }
 ]
 
-new_line_tags = ["p", "br", "hr"]
+new_line_tags = ["p", "br", "hr", "li", "ol", "dl", "dt", "dd"]

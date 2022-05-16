@@ -4,7 +4,7 @@ from src.data import forbidden_tags, new_line_tags
 
 
 class MWParser:
-    def __init__(self, URL, cache_folder):
+    def __init__(self, cache_folder, URL="https://en.wikipedia.org/w/api.php"):
         self.api = MWApi(URL, cache_folder)
         self.parsed = None
 
@@ -31,6 +31,12 @@ class ParserJob:
         self.data = []
         self.textLocation = 0
         self.process(root)
+        self.repair_text()
+
+    def repair_text(self):
+        if not self.text[-1]:
+            self.text.pop()
+        self.text = [line.strip() for line in self.text]
 
     def process(self, section):
         {
@@ -63,6 +69,10 @@ class ParserJob:
         for child in tag.children:
             self.process(child)
         obj["end"] = [self.textLocation, len(self.text[self.textLocation])-1]
+        if tag.name in new_line_tags:
+            if len(self.text[self.textLocation]) > 0:
+                self.textLocation += 1
+                self.text.append("")
         self.data.append(obj)
 
     # def check_tag(self, tag):
@@ -74,11 +84,12 @@ class ParserJob:
         fixed_str = self.fix_string(string)
         self.text[self.textLocation] += fixed_str
 
-    @staticmethod
-    def fix_string(string):
+    def fix_string(self, string):
         string = string.replace("\r\n", " ")
         string = string.replace("\n", " ")
         # TODO maybe easier?
         while "  " in string:
             string = string.replace("  ", " ")
+        if self.text[self.textLocation] and self.text[self.textLocation][-1] == " " and string[0] == " ":
+            string = string[1:]
         return string

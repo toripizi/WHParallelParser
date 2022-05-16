@@ -1,10 +1,10 @@
 from src.MWParser import MWParser
+import json
 
-
-parser = MWParser("https://en.wikipedia.org/w/api.php", "./cached")
-output = parser.parse_wikicode("'''asd'''")
+parser = MWParser("./cached")
+output = parser.parse_wikicode("""== Header ==\nContent""")
 print(output.text)
-print(output.data)
+print(json.dumps(output.data))
 
 with open("./example.html", "r") as file:
     output = parser.parse_html(file)
