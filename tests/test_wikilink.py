@@ -79,6 +79,7 @@ class WikilinkTestCase(ParserTestCase):
             ["some content and link.", "^ [http://example.com It should work by now"],
         )
 
+
     def test_blend_link_in_file_link(self):
         wikitext = "[[File:true.berries.jpg|300px|thumb|right|[[grape]]s]]"
         self.assertParsed(wikitext, ["grapes"])
