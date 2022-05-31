@@ -28,12 +28,23 @@ class RefTestCase(ParserTestCase):
 
     def test_tag_with_double_braces(self):
         wikitext = "<ref>{{cytuj stronę |url = https://www.cia.gov/library/publications/resources/the-world-factbook/rankorder/2147rank.html#pl |tytuł = Country comparison: Area |praca = The World Factbook |opublikowany = [[Centralna Agencja Wywiadowcza|Central Intelligence Agency]] |język = en |data dostępu = 2017-11-29}}</ref>"
-        self.assertParsed(wikitext, [])
+        self.assertParsed(
+            wikitext,
+            [
+                '^ "Country comparison: Area". The World Factbook. Central Intelligence Agency. Retrieved 2017-11-29.'
+            ],
+        )
 
     def test_content_after_ref(self):
         wikitext = "<ref>Content inside</ref>. Content outside."
-        self.assertParsed(wikitext, [". Content outside."])
+        self.assertParsed(wikitext, [". Content outside.", "^ Content inside"])
 
     def test_ref_with_link_with_url_in_content(self):
         wikitext = "językowych<ref>[[stats:EN/TablesWikipediaZZ.htm|Http://stats.wikimedia.org/EN/TablesWikipediaZZ.htm]] Wikipedia Statistics All languages.</ref> something"
-        self.assertParsed(wikitext, ["językowych something"])
+        self.assertParsed(
+            wikitext,
+            [
+                "językowych something",
+                "^ Http://stats.wikimedia.org/EN/TablesWikipediaZZ.htm Wikipedia Statistics All languages.",
+            ],
+        )
