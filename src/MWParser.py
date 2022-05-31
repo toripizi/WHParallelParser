@@ -9,13 +9,13 @@ class MWParser:
         self.parsed = None
 
     def parse_wikicode(self, text):
-        soup = BeautifulSoup(self.api.parse(text), 'html.parser')
+        soup = BeautifulSoup(self.api.parse(text), "html.parser")
         root = soup.find("div", {"class": "mw-parser-output"})
         self.parsed = ParserJob(root)
         return self.parsed
 
     def parse_html(self, html):
-        soup = BeautifulSoup(html, 'html.parser')
+        soup = BeautifulSoup(html, "html.parser")
         root = soup.find()
         self.parsed = ParserJob(root)
         return self.parsed
@@ -64,11 +64,11 @@ class ParserJob:
         obj = {
             "tag": tag.name,
             "attrs": tag.attrs,
-            "start": [self.textLocation, len(self.text[self.textLocation])]
+            "start": [self.textLocation, len(self.text[self.textLocation])],
         }
         for child in tag.children:
             self.process(child)
-        obj["end"] = [self.textLocation, len(self.text[self.textLocation])-1]
+        obj["end"] = [self.textLocation, len(self.text[self.textLocation]) - 1]
         if tag.name in new_line_tags:
             if len(self.text[self.textLocation]) > 0:
                 self.textLocation += 1
@@ -90,6 +90,10 @@ class ParserJob:
         # TODO maybe easier?
         while "  " in string:
             string = string.replace("  ", " ")
-        if self.text[self.textLocation] and self.text[self.textLocation][-1] == " " and string[0] == " ":
+        if (
+            self.text[self.textLocation]
+            and self.text[self.textLocation][-1] == " "
+            and string[0] == " "
+        ):
             string = string[1:]
         return string

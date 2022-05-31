@@ -18,15 +18,15 @@ class MWApi:
                 "action": "parse",
                 "contentmodel": "wikitext",
                 "text": text,
-                "format": "json"
-            }
+                "format": "json",
+            },
         )
         parsed = response.json()["parse"]["text"]["*"]
         self.save_to_cache(text, parsed)
         return parsed
 
     def get_cached(self, text):
-        name = hashlib.sha256(text.encode('utf-8')).hexdigest()
+        name = hashlib.sha256(text.encode("utf-8")).hexdigest()
         path = f"{self.cache_folder}/{name}"
         if exists(path):
             with open(path, "r", encoding="utf-8") as file:
@@ -34,7 +34,7 @@ class MWApi:
                 return parsed
 
     def save_to_cache(self, text, parsed):
-        name = hashlib.sha256(text.encode('utf-8')).hexdigest()
+        name = hashlib.sha256(text.encode("utf-8")).hexdigest()
         path = f"{self.cache_folder}/{name}"
         with open(path, "w", encoding="utf-8") as file:
             # print(parsed)
