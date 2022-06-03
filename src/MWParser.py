@@ -20,9 +20,6 @@ class MWParser:
         self.parsed = ParserJob(root)
         return self.parsed
 
-    def get_text_from_tag(self):
-        pass
-
 
 class ParserJob:
     def __init__(self, root):
@@ -75,9 +72,6 @@ class ParserJob:
                 self.text.append("")
         self.data.append(obj)
 
-    # def check_tag(self, tag):
-    #     pass
-
     def process_string(self, string):
         if string == "\n":
             return
@@ -97,3 +91,9 @@ class ParserJob:
         ):
             string = string[1:]
         return string
+
+    def find_first_tag(self, expected_tag):
+        for tag in self.data:
+            if tag["tag"] == expected_tag:
+                return tag
+        return {"tag": None}
