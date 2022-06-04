@@ -9,6 +9,7 @@ forbidden_tags = [
     {"name": "div", "attrs": {"role": "navigation"}},
     {"name": "table", "attrs": {}},
     {"name": "span", "attrs": {"class": ["error", "mw-ext-cite-error"]}},
+    {"name": "sup", "attrs": {"class": ["reference"]}},
 ]
 
 new_line_tags = ["p", "br", "hr", "li", "ol", "dl", "dt", "dd"]

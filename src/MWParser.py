@@ -20,10 +20,14 @@ class MWParser:
         self.parsed = ParserJob(root)
         return self.parsed
 
+    def get_text_from_tag(self):
+        pass
+
 
 class ParserJob:
     def __init__(self, root):
         self.root = root
+        self.preformatted = False
         self.text = [""]
         self.data = []
         self.textLocation = 0
@@ -43,7 +47,7 @@ class ParserJob:
         }[type(section)](section)
 
     def process_tag(self, tag):
-        # TODO zrefactorować to trzeba
+
         for forbidden_tag in forbidden_tags:
             if forbidden_tag["name"] == tag.name:
                 match = True
@@ -52,7 +56,6 @@ class ParserJob:
                         match = False
                 if match:
                     return
-        # TODO zrefactorować to trzeba
 
         if tag.name in new_line_tags:
             if len(self.text[self.textLocation]) > 0:
@@ -63,9 +66,17 @@ class ParserJob:
             "attrs": tag.attrs,
             "start": [self.textLocation, len(self.text[self.textLocation])],
         }
+        if tag.name == "pre":
+            self.preformatted = True
+
         for child in tag.children:
             self.process(child)
+
+        if tag.name == "pre":
+            self.preformatted = False
+
         obj["end"] = [self.textLocation, len(self.text[self.textLocation]) - 1]
+
         if tag.name in new_line_tags:
             if len(self.text[self.textLocation]) > 0:
                 self.textLocation += 1
@@ -73,15 +84,20 @@ class ParserJob:
         self.data.append(obj)
 
     def process_string(self, string):
+        if self.preformatted:
+            self.process_preformatted_string(string)
+            return
         if string == "\n":
             return
         fixed_str = self.fix_string(string)
         self.text[self.textLocation] += fixed_str
 
+    def process_preformatted_string(self, string):
+        self.text[self.textLocation] += string
+
     def fix_string(self, string):
         string = string.replace("\r\n", " ")
         string = string.replace("\n", " ")
-        # TODO maybe easier?
         while "  " in string:
             string = string.replace("  ", " ")
         if (
