@@ -1,6 +1,6 @@
-from src.api import MWApi
+from MWParser.api import MWApi
 from bs4 import BeautifulSoup, element
-from src.data import forbidden_tags, new_line_tags
+from MWParser.data import forbidden_tags, new_line_tags
 
 
 class MWParser:
