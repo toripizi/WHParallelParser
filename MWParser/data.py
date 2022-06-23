@@ -1,15 +1,15 @@
 forbidden_tags = [
-    {"name": "style", "attrs": {}},
-    {"name": "script", "attrs": {}},
-    {"name": "span", "attrs": {"class": ["IPA"]}},
-    {"name": "span", "attrs": {"class": ["unicode haudio"]}},
-    {"name": "span", "attrs": {"class": ["mw-editsection"]}},
-    {"name": "table", "attrs": {"class": ["infobox vcard"]}},
-    {"name": "sup", "attrs": {"class": ["reference"]}},
-    {"name": "div", "attrs": {"role": "navigation"}},
-    {"name": "table", "attrs": {}},
-    {"name": "span", "attrs": {"class": ["error", "mw-ext-cite-error"]}},
-    {"name": "sup", "attrs": {"class": ["reference"]}},
+    {"name": "style"},
+    {"name": "script"},
+    {"name": "span", "class": "IPA"},
+    {"name": "span", "class": "unicode haudio"},
+    {"name": "span", "class": "mw-editsection"},
+    {"name": "table", "class": "infobox vcard"},
+    {"name": "sup", "class": "reference"},
+    {"name": "div", "role": "navigation"},
+    {"name": "table"},
+    {"name": "span", "$and": [{"class": "error"}, {"class": "mw-ext-cite-error"}]},
+    {"name": "sup", "class": "reference"},
 ]
 
 new_line_tags = ["p", "br", "hr", "li", "ol", "dl", "dt", "dd"]
