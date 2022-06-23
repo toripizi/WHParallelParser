@@ -1,8 +1,6 @@
 import json
 from MWParser import MWParser
 
-f = open("test.txt", "a")
-
 
 class Iterator:
     def __init__(self, file_name):
@@ -15,8 +13,5 @@ class Iterator:
     def __next__(self):
         line = self.html_data.readline()
         json_data = json.loads(line)
+        print(json_data)
         return self.parser.parse_html(json_data["article_body"]["html"])
-
-
-for html in Iterator("../simplewiki_0.ndjson"):
-    print(html.text)

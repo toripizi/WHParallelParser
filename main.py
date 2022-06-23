@@ -1,24 +1,15 @@
-from bs4 import BeautifulSoup
-from src.api import MWApi
-from src.MWParser import MWParser
-import json
+from MWParser.MWParser import MWParser
+from MWParser.Iterator import Iterator
 
-URL = "https://en.wikipedia.org/w/api.php"
-api = MWApi(URL, "cached")
-soup = BeautifulSoup(
-    api.parse(
-        "<ref>{{cytuj stronę |url = https://www.cia.gov/library/publications/resources/the-world-factbook/rankorder/2147rank.html#pl |tytuł = Country comparison: Area |praca = The World Factbook |opublikowany = [[Centralna Agencja Wywiadowcza|Central Intelligence Agency]] |język = en |data dostępu = 2017-11-29}}</ref>"
-    ),
-    "html.parser",
-)
-root = soup.find("div", {"class": "mw-parser-output"})
+# path_to_simplewiki = (
+#     "./simplewiki-NS0-20220420-ENTERPRISE-HTML.json/simplewiki_0.ndjson"
+# )
+# for html in Iterator(path_to_simplewiki):
+#     print(html.text)
 
-
-print(root)
-
-# print(json.dumps(output.data))
-#
-# with open("./example.html", "r") as file:
-#     output = parser.parse_html(file)
-#     print(output.text)
-#     print(output.data)
+parser = MWParser("./cached")
+path_to_html = "./example.html"
+with open(path_to_html, "r") as file:
+    output = parser.parse_html(file)
+    print(output.text)
+    print(output.data)

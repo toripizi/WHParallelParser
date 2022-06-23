@@ -1,6 +1,6 @@
 import requests
 import hashlib
-from os.path import *
+from os.path import exists
 
 
 class MWApi:
@@ -37,5 +37,4 @@ class MWApi:
         name = hashlib.sha256(text.encode("utf-8")).hexdigest()
         path = f"{self.cache_folder}/{name}"
         with open(path, "w", encoding="utf-8") as file:
-            # print(parsed)
             file.write(parsed)
