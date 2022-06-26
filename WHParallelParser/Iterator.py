@@ -1,11 +1,11 @@
 import json
-from MWParser import MWParser
+from WHParallelParser import WHParallelParser
 
 
 class Iterator:
     def __init__(self, file_name):
         self.html_data = open(file_name, "rb")
-        self.parser = MWParser(cache_folder="./cached")
+        self.parser = WHParallelParser(cache_folder="./cached")
 
     def __iter__(self):
         return self

@@ -2,12 +2,12 @@ from setuptools import setup
 
 
 setup(
-    name="MWParser",
+    name="WHParallelParser",
     version="0.1.8",
     license="MIT",
     author="MMK_group",
     author_email="maciekgoncerzewicz@gmail.com",
-    packages=["MWParser"],
+    packages=["WHParallelParser"],
     package_dir={"": "./"},
     url="https://github.com/gmyrianthous/example-publish-pypi",
     keywords="example project",

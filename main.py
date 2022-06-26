@@ -1,14 +1,14 @@
-from MWParser import MWParser
-from MWParser import Iterator
-from MWParser import Rule
+from WHParallelParser import WHParallelParser
+from WHParallelParser import Iterator
+from WHParallelParser import Rule
 
 path_to_html = "./example.html"
 path_to_simplewiki = "example_simplewiki.json/simplewiki.ndjson"
-cahce_folder = "./cached"
+cache_folder = "./cached"
 
 
 # parser initialization, we should specify cache_folder
-parser = MWParser(cache_folder=cahce_folder)
+parser = WHParallelParser(cache_folder=cache_folder)
 
 # parsing html
 with open(path_to_html, "r") as file:

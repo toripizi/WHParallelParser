@@ -1,10 +1,10 @@
 import unittest
-from MWParser import MWParser
+from WHParallelParser import WHParallelParser
 
 
 class ParserTestCase(unittest.TestCase):
     def setUp(self):
-        self.parser = MWParser(cache_folder="./tests/cached")
+        self.parser = WHParallelParser(cache_folder="./tests/cached")
 
     def assertParsed(self, wikitext, expected_data):
         result = self.parser.parse_wikicode(wikitext)

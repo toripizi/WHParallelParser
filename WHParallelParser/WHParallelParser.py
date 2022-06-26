@@ -1,11 +1,11 @@
 from bs4 import BeautifulSoup, element
-from MWParser.data import new_line_tags
-from MWParser.data import forbidden_tags
-from MWParser.api import MWApi
-from MWParser.Rules import RuleList
+from WHParallelParser.data import new_line_tags
+from WHParallelParser.data import forbidden_tags
+from WHParallelParser.api import MWApi
+from WHParallelParser.Rules import RuleList
 
 
-class MWParser:
+class WHParallelParser:
     def __init__(
         self,
         rules=RuleList(forbidden_tags),
