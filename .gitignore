@@ -4,5 +4,4 @@ cached
 __pycache__
 venv
 dist/
-example_simplewiki.json
 MMK_parser.egg-info/
