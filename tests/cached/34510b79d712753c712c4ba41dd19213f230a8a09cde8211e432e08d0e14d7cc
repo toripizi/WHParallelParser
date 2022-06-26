@@ -1,0 +1,28 @@
+<div class="mw-parser-output"><p>This is a paragraph
+</p><p><a href="/w/index.php?title=Template:Some_template&amp;action=edit&amp;redlink=1" class="new" title="Template:Some template (page does not exist)">Template:Some template</a>
+</p><p>This is next
+</p>
+<!-- 
+NewPP limit report
+Parsed by mw1376
+Cached time: 20220626183614
+Cache expiry: 1814400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.007 seconds
+Real time usage: 0.010 seconds
+Preprocessor visited node count: 2/1000000
+Post‐expand include size: 27/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/500
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+Number of Wikibase entities loaded: 0/400
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    1.175      1 Template:Some_template
+100.00%    1.175      1 -total
+-->
+</div>

@@ -1,0 +1,29 @@
+<div class="mw-parser-output"><p>some <sup id="cite_ref-1" class="reference"><a href="#cite_note-1">&#91;1&#93;</a></sup>content <a href="/w/index.php?title=And_link&amp;action=edit&amp;redlink=1" class="new" title="And link (page does not exist)">and link</a>.
+</p>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><b><a href="#cite_ref-1">^</a></b></span> <span class="reference-text">[<a rel="nofollow" class="external free" href="http://example.com">http://example.com</a> It should work by now</span>
+</li>
+</ol></div>
+<!-- 
+NewPP limit report
+Parsed by mw1342
+Cached time: 20220626183634
+Cache expiry: 1814400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.013 seconds
+Real time usage: 0.016 seconds
+Preprocessor visited node count: 11/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/500
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 83/5000000 bytes
+Number of Wikibase entities loaded: 0/400
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>

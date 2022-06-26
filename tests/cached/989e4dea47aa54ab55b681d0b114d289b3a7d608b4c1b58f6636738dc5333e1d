@@ -1,0 +1,25 @@
+<div class="mw-parser-output"><p><a href="/wiki/Flute" title="Flute"></a></p><div class="mw-ext-score" data-midi="//upload.wikimedia.org/score/p/o/poxuw9oqi5byu0uofe1itgjjuc6mhs5/poxuw9oq.midi"><a href="/wiki/Flute" title="Flute"><img src="//upload.wikimedia.org/score/p/o/poxuw9oqi5byu0uofe1itgjjuc6mhs5/poxuw9oq.png" width="757" height="126" alt=" \relative c&#39;&#39;&#39;&#39;  { \clef treble \time 4/4 \set Staff.midiInstrument = #&quot;flute&quot;  \tempo &quot;Allegro&quot; 4=176 \slashedGrace a8\mf( g8-.)[ e-.] \slashedGrace a( gis-.)[ gis-.] gis-.[ gis-.] \slashedGrace a( gis-.)[ e-.] | d16-&gt;( ees des c b8) \times 2/3 {a16( b a } g8-&gt;) g-. c-. e-. | \slashedGrace a8( g8-.)[ e-.] \slashedGrace a( gis-.)[ gis-.] gis-.[ gis-.] \slashedGrace a( gis-.)[ e-.] | d16-&gt;( ees des c g&#39;!8-.) \slashedGrace b,( a-.) g2-&gt; } " /></a><div style="margin-top: 3px;"><a href="/wiki/Flute" title="Flute"><audio controls=""><source src="//upload.wikimedia.org/score/p/o/poxuw9oqi5byu0uofe1itgjjuc6mhs5/poxuw9oq.mp3" type="audio/mpeg" /></audio></a><div><a href="/wiki/Flute" title="Flute">Audio playback is not supported in your browser. You can </a><a href="//upload.wikimedia.org/score/p/o/poxuw9oqi5byu0uofe1itgjjuc6mhs5/poxuw9oq.mp3">download the audio file</a>.</div></div></div>
+<p class="mw-empty-elt"></p>
+<!-- 
+NewPP limit report
+Parsed by mw1398
+Cached time: 20220626183632
+Cache expiry: 1814400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.011 seconds
+Real time usage: 0.176 seconds
+Preprocessor visited node count: 4/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/500
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 1101/5000000 bytes
+Number of Wikibase entities loaded: 0/400
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+</div>

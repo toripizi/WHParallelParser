@@ -1,0 +1,31 @@
+<div class="mw-parser-output"><p><sup id="cite_ref-1" class="reference"><a href="#cite_note-1">&#91;uwaga 1&#93;</a></sup>
+<br /><span class="error mw-ext-cite-error" lang="en" dir="ltr">Cite error: There are <code>&lt;ref&#160;group&#61;uwaga&gt;</code> tags on this page, but the references will not show without a <code>&#123;&#123;reflist&#124;group&#61;uwaga&#125;&#125;</code> template (see the <a href="/wiki/Help:Cite_errors/Cite_error_group_refs_without_references" title="Help:Cite errors/Cite error group refs without references">help page</a>).</span>
+</p>
+<!-- 
+NewPP limit report
+Parsed by mw1443
+Cached time: 20220626183624
+Cache expiry: 1814400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.076 seconds
+Real time usage: 0.102 seconds
+Preprocessor visited node count: 120/1000000
+Post‐expand include size: 2457/2097152 bytes
+Template argument size: 1208/2097152 bytes
+Highest expansion depth: 12/100
+Expensive parser function count: 0/500
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 89/5000000 bytes
+Lua time usage: 0.009/10.000 seconds
+Lua memory usage: 827602/52428800 bytes
+Number of Wikibase entities loaded: 0/400
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+177.94%   63.971      2 Template:Broken_ref
+100.00%   35.951      1 -total
+  7.07%    2.543      1 Template:Broken_ref/lang
+  5.92%    2.128      1 Template:Broken_ref/cat
+-->
+</div>

@@ -1,12 +1,17 @@
-from MWParser.api import MWApi
 from bs4 import BeautifulSoup, element
 from MWParser.data import new_line_tags
 from MWParser.data import forbidden_tags
+from MWParser.api import MWApi
 from MWParser.Rules import RuleList
 
 
 class MWParser:
-    def __init__(self, rules=RuleList(forbidden_tags), cache_folder="/tmp", URL="https://en.wikipedia.org/w/api.php"):
+    def __init__(
+        self,
+        rules=RuleList(forbidden_tags),
+        cache_folder="/tmp",
+        URL="https://en.wikipedia.org/w/api.php",
+    ):
         self.rules = rules
         self.api = MWApi(URL, cache_folder)
         self.parsed = None
@@ -19,7 +24,7 @@ class MWParser:
 
     def parse_html(self, html):
         soup = BeautifulSoup(html, "html.parser")
-        root = soup.find()
+        root = soup.find("div", {"class": "mw-parser-output"}) or soup.find()
         self.parsed = ParserJob(root, self.rules)
         return self.parsed
 
@@ -48,14 +53,6 @@ class ParserJob:
         }[type(section)](section)
 
     def process_tag(self, tag):
-        # for forbidden_tag in forbidden_tags:
-        #     if forbidden_tag["name"] == tag.name:
-        #         match = True
-        #         for name, value in forbidden_tag["attrs"].items():
-        #             if not (name in tag.attrs and tag.attrs[name] == value):
-        #                 match = False
-        #         if match:
-        #             return
         if self.rules.test(tag):
             return
 

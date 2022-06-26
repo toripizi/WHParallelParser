@@ -10,6 +10,7 @@ class MWApi:
 
     def parse(self, text):
         cached = self.get_cached(text)
+        print("asd", cached)
         if cached:
             return cached
         response = requests.get(
@@ -21,12 +22,14 @@ class MWApi:
                 "format": "json",
             },
         )
+        print(response.json())
         parsed = response.json()["parse"]["text"]["*"]
         self.save_to_cache(text, parsed)
         return parsed
 
     def get_cached(self, text):
         name = hashlib.sha256(text.encode("utf-8")).hexdigest()
+        print(text.encode("utf-8"), name)
         path = f"{self.cache_folder}/{name}"
         if exists(path):
             with open(path, "r", encoding="utf-8") as file:

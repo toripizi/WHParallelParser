@@ -45,7 +45,7 @@ class Rule:
             elif key == "name":
                 match = match and (element.name == rule[key])
             else:
-                if not (key in element):
+                if not (key in element.attrs):
                     return False
                 if type(element[key]) is list:
                     match = match and (rule[key] in element[key])
@@ -56,5 +56,3 @@ class Rule:
 
     def test(self, element):
         return self.__test(element, self.rule)
-
-

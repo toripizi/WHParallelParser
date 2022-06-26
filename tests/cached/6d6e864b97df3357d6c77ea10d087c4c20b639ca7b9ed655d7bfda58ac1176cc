@@ -1,0 +1,30 @@
+<div class="mw-parser-output"><p>{{This <sup id="cite_ref-1" class="reference"><a href="#cite_note-1">&#91;1&#93;</a></sup>}}
+</p>
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><b><a href="#cite_ref-1">^</a></b></span> <span class="reference-text"> <a href="/w/index.php?title=Template:This_is_a_test&amp;action=edit&amp;redlink=1" class="new" title="Template:This is a test (page does not exist)">Template:This is a test</a></span>
+</li>
+</ol></div>
+<!-- 
+NewPP limit report
+Parsed by mw1356
+Cached time: 20220626183603
+Cache expiry: 1814400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.010 seconds
+Real time usage: 0.013 seconds
+Preprocessor visited node count: 13/1000000
+Post‐expand include size: 28/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 3/100
+Expensive parser function count: 0/500
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 83/5000000 bytes
+Number of Wikibase entities loaded: 0/400
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    1.084      1 Template:This_is_a_test
+100.00%    1.084      1 -total
+-->
+</div>
