@@ -1,0 +1,26 @@
+<div class="mw-parser-output"><p><a href="/w/index.php?title=Template:This_will_be_deleted&amp;action=edit&amp;redlink=1" class="new" title="Template:This will be deleted (page does not exist)">Template:This will be deleted</a>
+</p>
+<!-- 
+NewPP limit report
+Parsed by mw1390
+Cached time: 20220626183602
+Cache expiry: 1814400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.006 seconds
+Real time usage: 0.010 seconds
+Preprocessor visited node count: 2/1000000
+Post‐expand include size: 34/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/500
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+Number of Wikibase entities loaded: 0/400
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    1.315      1 Template:This_will_be_deleted
+100.00%    1.315      1 -total
+-->
+</div>

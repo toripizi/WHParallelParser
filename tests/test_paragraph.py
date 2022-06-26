@@ -72,7 +72,7 @@ class ParagraphTestCase(ParserTestCase):
     def test_preformatted_multi_paragraph(self):
         wikitext = " This     is     a paragraph\n  There are two spaces!"
         self.assertParsed(
-            wikitext, ["This     is     a paragraph", " There are two spaces!"]
+            wikitext, ["This     is     a paragraph\n There are two spaces!"]
         )
 
     # @unittest.skip
