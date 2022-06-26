@@ -17,7 +17,7 @@ class RuleList:
 
 
 class Rule:
-    def __init__(self, rule=None):
+    def __init__(self, rule):
         self.rule = rule
 
     def __logic(self, element, rule, operator):
@@ -53,6 +53,9 @@ class Rule:
                     match = match and rule[key] == element[key]
 
         return match
+
+    def __eq__(self, other):
+        return self.rule == other.rule
 
     def test(self, element):
         return self.__test(element, self.rule)

@@ -12,5 +12,7 @@ class Iterator:
 
     def __next__(self):
         line = self.html_data.readline()
-        json_data = json.loads(line)
-        return self.parser.parse_html(json_data["article_body"]["html"])
+        if line:
+            json_data = json.loads(line)
+            return self.parser.parse_html(json_data["article_body"]["html"])
+        raise StopIteration
