@@ -12,4 +12,19 @@ forbidden_tags = [
     {"name": "sup", "class": "reference"},
 ]
 
-new_line_tags = ["p", "br", "hr", "li", "ol", "dl", "dt", "dd"]
+new_line_tags = [
+    "p",
+    "br",
+    "hr",
+    "li",
+    "ol",
+    "dl",
+    "dt",
+    "dd",
+    "h1",
+    "h2",
+    "h3",
+    "h4",
+    "h5",
+    "h6",
+]

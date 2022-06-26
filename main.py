@@ -11,10 +11,9 @@ cache_folder = "./cached"
 parser = WHParallelParser(cache_folder=cache_folder)
 
 # parsing html
-with open(path_to_html, "r") as file:
-    output = parser.parse_html(file)
-    print(output.text)
-    print(output.data)
+output = parser.parse_html("<div>test<h6>test</div>")
+print(output.text)
+print(output.data)
 
 # parsing wikicode
 output = parser.parse_wikicode("[[link]]")
