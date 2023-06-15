@@ -5,11 +5,13 @@ forbidden_tags = [
     {"name": "span", "class": "unicode haudio"},
     {"name": "span", "class": "mw-editsection"},
     {"name": "table", "class": "infobox vcard"},
+    {"name": "div", "$and": [{"class": "infobox"}, {"class": "sisterproject"}]},
     {"name": "sup", "class": "reference"},
     {"name": "div", "role": "navigation"},
     {"name": "table"},
     {"name": "span", "$and": [{"class": "error"}, {"class": "mw-ext-cite-error"}]},
     {"name": "sup", "class": "reference"},
+    {"name": "div", "$and": [{"class": "boilerplate"}, {"class": "metadata"}, {"class": "plainlinks"}]}
 ]
 
 new_line_tags = [

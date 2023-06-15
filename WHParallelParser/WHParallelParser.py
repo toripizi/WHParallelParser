@@ -43,7 +43,7 @@ class ParserJob:
     def repair_text(self):
         if not self.text[-1]:
             self.text.pop()
-        self.text = [line.strip() for line in self.text]
+        #self.text = [line.strip() for line in self.text]
 
     def process(self, section):
         {
@@ -74,7 +74,7 @@ class ParserJob:
         if tag.name == "pre":
             self.preformatted = False
 
-        obj["end"] = [self.textLocation, len(self.text[self.textLocation]) - 1]
+        obj["end"] = [self.textLocation, len(self.text[self.textLocation])]
 
         if tag.name in new_line_tags:
             if len(self.text[self.textLocation]) > 0:
