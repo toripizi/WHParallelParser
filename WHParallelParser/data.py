@@ -2,16 +2,19 @@ forbidden_tags = [
     {"name": "style"},
     {"name": "script"},
     {"name": "span", "class": "IPA"},
-    {"name": "span", "class": "unicode haudio"},
+    {"name": "span", "$and": [{"class": "unicode"}, {"class": "haudio"}]},
     {"name": "span", "class": "mw-editsection"},
-    {"name": "table", "class": "infobox vcard"},
+    # {"name": "table", "$and": [{"class": "infobox"}, {"class": "vcard"}]},
     {"name": "div", "$and": [{"class": "infobox"}, {"class": "sisterproject"}]},
     {"name": "sup", "class": "reference"},
     {"name": "div", "role": "navigation"},
     {"name": "table"},
     {"name": "span", "$and": [{"class": "error"}, {"class": "mw-ext-cite-error"}]},
-    {"name": "sup", "class": "reference"},
-    {"name": "div", "$and": [{"class": "boilerplate"}, {"class": "metadata"}, {"class": "plainlinks"}]}
+    {"name": "div", "$and": [{"class": "boilerplate"}, {"class": "metadata"}, {"class": "plainlinks"}]},
+    {"name": "figure"},
+    {"name": "div", "role": "note"},
+    {"name": "title"},
+    {"name": "annotation", "encoding": "application/x-tex"},
 ]
 
 new_line_tags = [

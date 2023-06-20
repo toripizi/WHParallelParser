@@ -136,6 +136,22 @@ path_to_simplewiki = "example_simplewiki.json/simplewiki.ndjson"
 for html in Iterator(path_to_simplewiki):
     print(html.text)
 ```
+# Rules
+We can define rules, which tags in html should be avoided.
+There is some example with predefined conditions (we can find them in file [data.py](WHParallelParser%2Fdata.py)):
+
+`{"name": "figure"}` *it will be avoiding all 'figure' tags*
+
+`{"name": "span", "class": "IPA"}` *it will be avoiding all 'span' tags with class which contains IPA*
+
+***
+#### *rules also support logical operators: `$not`, `$or`, `$and`*
+**example:**
+
+`{"name": "span", "$and": [{"class": "unicode"}, {"class": "haudio"}]},` 
+
+*It means that parser will avoid all span tags with class: unicode AND class: haudio*
+
 # Add Rule
 We can add some rules
 ```python
